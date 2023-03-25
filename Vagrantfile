@@ -7,8 +7,7 @@ Vagrant.configure("2") do |config|
     # puertos host y máquina virtualizada
     config.vm.network :forwarded_port, host: 8080, guest: 80
     
-    # config.vm.synced_folder './', '/vagrant', SharedFoldersEnableSymlinksCre:q!
-    ate: false
+    # config.vm.synced_folder './', '/vagrant', SharedFoldersEnableSymlinksCre:qate: false
     # require plugin https://github.com/leighmcculloch/vagrant-docker-compose
     config.vagrant.plugins = "vagrant-docker-compose"
     
@@ -16,11 +15,13 @@ Vagrant.configure("2") do |config|
     # Para usar rsync, tiene que estar instalado en el host
     # https://learn.microsoft.com/en-us/windows/wsl/install
 
-    # config.vm.provision "file", source: "./web", destination: "/home/vagrant/web"
+    config.vm.provision "file", source: "./web", destination: "/home/vagrant/web"
     # config.vm.synced_folder "./web", "/home/vagrant/web", type: "rsync"  #, rsync__exclude: ".git/"
     # install docker and docker-compose
     config.vm.provision :docker
     config.vm.provision :docker_compose
-    # config.vm.provision :shell, path: "provision.sh"  
+    # config.vm.provision :shell, path: "provision.sh"    
+    config.ssh.private_key_path = "/home/manuel/.ssh/id_rsa"
+    config.ssh.forward_agent = true
   end
   
