@@ -72,3 +72,14 @@ Una vez dentro, vemos que ya tenemos instalado [docker]() y lo podemos ejecutar 
 
 Para volver a la máquina principal, al host, simplemente presionalmos el **Ctrl** del teclado que está a la derecha.
 Para poder ejecutar en pantalla grande el terminal vamos al menú de la máquina virtual en la opción **Devices** seleccionamos ***Update Guest Addition***
+### Apuntes para docker
+
+Por defecto, vagrant va a hacer que la carpeta desde donde invoquemos ***vagrant up*** será compartida  a la carpeta ***/vagrant*** dentro de la *máquina virtual*.
+
+Ahora lo que tenemos que tener en cuenta es que trabajamos a dos niveles, es decir, cuando creemos un contenedor dentro de la maquina virtual, para ese contenedor, su host el la maquina virtual
+Si queremos usar en contenedor desde el host, lo haremos a través de la máquina virtual, para ello tenemos puertos y carpetas compartidas. Ver imagen siguiente:
+
+
+![Diagrama general](./imagenes/diagrama_general.png)
+
+
