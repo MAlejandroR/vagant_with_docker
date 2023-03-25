@@ -1,7 +1,7 @@
 # Objetivo
-Tener todos una misma máquina donde poder probar los comandos e instrucciones que vayamos viendo de ***docker***.
+Tener todos una misma máquina donde poder probar los comandos e instrucciones que vayamos viendo de ***[docker](https://www.docker.com/)***.
 
-Para ello vamos a tener una máquina virtual de ubuntu e instalada en ella **[docker]().
+Para ello vamos a tener una máquina virtual de ubuntu e instalada en ella **[docker](https://www.docker.com/)**.
 
 Para conseguir esto usaremos **[Virutalbox](https://www.virtualbox.org/)** como herramientoa para crear máquinas virtuales y **[Vagrant](https://www.vagrantup.com/)** .
 como herramienta que nos va a permitir configurar la máquina virtual e instalar en ella los paquetes que necesitemos, en esta caso **[docker](https://www.docker.com/)**.
@@ -9,7 +9,9 @@ como herramienta que nos va a permitir configurar la máquina virtual e instalar
 Este programa permite gestionar máqinas virtuales. En este caso sí que son máquina completas que emulan tanto el software como el hardware (en los contenedores, solo se emula software).
 La instalación es mu sencilla, dentro [Virutalbox](https://www.virtualbox.org/)  accedemos a la sección de [descargas](https://www.virtualbox.org/wiki/Downloads), y seleccionamos según nuestro sistema operativo
 
+
 Ejectuamos el programa y visualizaremos la interfaz gráfica de [Virutalbox](https://www.virtualbox.org/)
+
 ------
 ![Virtualbox](./imagenes/virtualbox.pnglbox)
 ------
@@ -46,13 +48,27 @@ Una vez que lo tenemos todo instalado, simplemente ejecutamos vagrant con el fic
 % vagrant up
 ```
  
- Si durante la instalación tienes problemas, puedes probar a arrancar virtualbox y eliminar la máquina que se ha generado para que la vuelva a generar
- ------
- ![]()
+Si durante la instalación tienes problemas, puedes probar a arrancar virtualbox y eliminar la máquina que se ha generado para que la vuelva a generar
+ 
+------
+ ![Virtualabox running ](./imagenes/vitualbox_running.png)
  -------
+
 También suele ocurrir un error 
-
  default: Warning: Authentication failure. Retrying...
+(es un tema de claves publica y privada)pero al final sí que entra bien.
 
+Una vez dentro, arrancamos [virtualbox](https://www.virtualbox.org/) y entramos en la máquina virtual
 
+Presionamos el botón **Mostrar** y nos saldrá un **terminal**
 
+Nos pide credenciales, e insertamos ***vagrant*** tanto para *login*  como para *password*
+
+____
+![Virtualbox running](./imagenes/vitualbox_running.png_1.png)
+____
+
+Una vez dentro, vemos que ya tenemos instalado [docker]() y lo podemos ejecutar con normalidad
+
+Para volver a la máquina principal, al host, simplemente presionalmos el **Ctrl** del teclado que está a la derecha.
+Para poder ejecutar en pantalla grande el terminal vamos al menú de la máquina virtual en la opción **Devices** seleccionamos ***Update Guest Addition***
